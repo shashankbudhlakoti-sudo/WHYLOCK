@@ -80,6 +80,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/scan/stats").hasAnyRole("USER", "ADMIN")
                         .requestMatchers("/api/scan/ai-analyze").hasAnyRole("USER", "ADMIN")
                         .requestMatchers("/api/fix/**").hasAnyRole("USER", "ADMIN")
+                       .requestMatchers("/", "/error", "/favicon.ico").permitAll()
+                       .requestMatchers("/auth/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
