@@ -1,0 +1,9 @@
+@"
+target/
+*.log
+*.txt
+*.bat
+.idea/
+.git
+whylock-frontend/
+"@ | Out-File -FilePath .dockerignore -Encoding utf8 -NoNewline
