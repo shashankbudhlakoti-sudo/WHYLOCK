@@ -7,7 +7,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,13 +17,13 @@ public class EmailService {
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    @Value("${resend.api.key}")
-    private String resendApiKey;
+    @Value("${brevo.api.key}")
+    private String brevoApiKey;
 
-    @Value("${resend.from.email}")
+    @Value("${brevo.from.email}")
     private String fromEmail;
 
-    private static final String RESEND_URL = "https://api.resend.com/emails";
+    private static final String BREVO_URL = "https://api.brevo.com/v3/smtp/email";
 
     public EmailService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
@@ -109,22 +108,28 @@ public class EmailService {
         try {
 
             Map<String, Object> attachment = new HashMap<>();
-            attachment.put("filename", attachmentFilename);
+            attachment.put("name", attachmentFilename);
             attachment.put(
                     "content",
                     Base64.getEncoder().encodeToString(attachmentBytes)
             );
 
+            Map<String, Object> sender = new HashMap<>();
+            sender.put("email", fromEmail);
+
+            Map<String, Object> recipient = new HashMap<>();
+            recipient.put("email", to);
+
             Map<String, Object> body = new HashMap<>();
-            body.put("from", fromEmail);
-            body.put("to", new String[]{to});
+            body.put("sender", sender);
+            body.put("to", new Object[]{recipient});
             body.put("subject", subject);
-            body.put("html", html);
-            body.put("attachments", new Object[]{attachment});
+            body.put("htmlContent", html);
+            body.put("attachment", java.util.List.of(attachment));
 
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
-            headers.setBearerAuth(resendApiKey);
+            headers.set("api-key", brevoApiKey);
 
             HttpEntity<String> request =
                     new HttpEntity<>(
@@ -133,14 +138,14 @@ public class EmailService {
                     );
 
             restTemplate.postForEntity(
-                    RESEND_URL,
+                    BREVO_URL,
                     request,
                     String.class
             );
 
         } catch (Exception e) {
             throw new RuntimeException(
-                    "Failed to send email with attachment via Resend",
+                    "Failed to send email with attachment via Brevo",
                     e
             );
         }
@@ -153,15 +158,21 @@ public class EmailService {
 
         try {
 
+            Map<String, Object> sender = new HashMap<>();
+            sender.put("email", fromEmail);
+
+            Map<String, Object> recipient = new HashMap<>();
+            recipient.put("email", to);
+
             Map<String, Object> body = new HashMap<>();
-            body.put("from", fromEmail);
-            body.put("to", new String[]{to});
+            body.put("sender", sender);
+            body.put("to", new Object[]{recipient});
             body.put("subject", subject);
-            body.put("html", html);
+            body.put("htmlContent", html);
 
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
-            headers.setBearerAuth(resendApiKey);
+            headers.set("api-key", brevoApiKey);
 
             HttpEntity<String> request =
                     new HttpEntity<>(
@@ -170,14 +181,14 @@ public class EmailService {
                     );
 
             restTemplate.postForEntity(
-                    RESEND_URL,
+                    BREVO_URL,
                     request,
                     String.class
             );
 
         } catch (Exception e) {
             throw new RuntimeException(
-                    "Failed to send email via Resend",
+                    "Failed to send email via Brevo",
                     e
             );
         }
