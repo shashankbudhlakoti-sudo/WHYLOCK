@@ -3,15 +3,11 @@ package com.whylock.whylock.service;
 import com.whylock.whylock.model.AiScanResponse;
 import com.whylock.whylock.model.MonitorSubscription;
 import com.whylock.whylock.repository.MonitorSubscriptionRepository;
-import jakarta.mail.internet.MimeMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -48,7 +44,7 @@ public class MonitoringService {
 
     private final MonitorSubscriptionRepository subscriptionRepo;
     private final ScanOrchestrationService scanService;
-    private final JavaMailSender mailSender;
+    private final EmailService emailService;
 
     @org.springframework.beans.factory.annotation.Value("${whylock.monitoring.alert-threshold:5}")
     private int alertThreshold;
@@ -56,14 +52,15 @@ public class MonitoringService {
     @org.springframework.beans.factory.annotation.Value("${whylock.monitoring.from-email:alerts@whylock.ai}")
     private String fromEmail;
 
-    public MonitoringService(MonitorSubscriptionRepository subscriptionRepo,
-                             ScanOrchestrationService scanService,
-                             JavaMailSender mailSender) {
+    public MonitoringService(
+            MonitorSubscriptionRepository subscriptionRepo,
+            ScanOrchestrationService scanService,
+            EmailService emailService) {
+
         this.subscriptionRepo = subscriptionRepo;
         this.scanService = scanService;
-        this.mailSender = mailSender;
+        this.emailService = emailService;
     }
-
     // ── Subscription Management ───────────────────────────────────────────────
 
     @Transactional
@@ -147,24 +144,33 @@ public class MonitoringService {
         sub.setLastScannedAt(LocalDateTime.now());
         subscriptionRepo.save(sub);
     }
+    private void sendAlertEmail(MonitorSubscription sub,
+                                AiScanResponse result,
+                                int oldScore,
+                                int newScore,
+                                boolean newCritical) {
 
-    // ── Email Sending ─────────────────────────────────────────────────────────
-
-    private void sendAlertEmail(MonitorSubscription sub, AiScanResponse result,
-                                int oldScore, int newScore, boolean newCritical) {
         try {
-            MimeMessage msg = mailSender.createMimeMessage();
-            MimeMessageHelper helper = new MimeMessageHelper(msg, true, "UTF-8");
 
-            helper.setFrom(fromEmail, "WhyLock Security Alerts");
-            helper.setTo(sub.getEmail());
-            helper.setSubject(buildSubject(result, newScore, newCritical));
-            helper.setText(buildHtmlEmail(sub, result, oldScore, newScore, newCritical), true);
+            String subject = buildSubject(result, newScore, newCritical);
+            String html = buildHtmlEmail(sub, result, oldScore, newScore, newCritical);
 
-            mailSender.send(msg);
+            emailService.sendHtmlEmail(
+                    sub.getEmail(),
+                    subject,
+                    html
+            );
+
             log.info("Alert email sent to {} for {}", sub.getEmail(), sub.getUrl());
+
         } catch (Exception e) {
-            log.error("Failed to send alert email to {}: {}", sub.getEmail(), e.getMessage());
+
+            log.error(
+                    "Failed to send alert email to {} for {}",
+                    sub.getEmail(),
+                    sub.getUrl(),
+                    e
+            );
         }
     }
 
