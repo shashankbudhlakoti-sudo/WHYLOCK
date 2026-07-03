@@ -14,6 +14,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 import java.util.List;
 
+
 @Component
 public class JwtFilter extends OncePerRequestFilter {
 
@@ -24,37 +25,50 @@ public class JwtFilter extends OncePerRequestFilter {
     }
 
     @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) {
+        String path = request.getServletPath();
+
+        return path.startsWith("/auth/")
+                || path.equals("/error")
+                || path.equals("/")
+                || path.startsWith("/actuator");
+    }
+
+    @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain filterChain)
             throws ServletException, IOException {
 
+        System.out.println(
+                "REQUEST => "
+                        + request.getMethod()
+                        + " "
+                        + request.getRequestURI()
+        );
+
         String authHeader = request.getHeader("Authorization");
 
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
 
-            String token = authHeader.substring(7);
-
             try {
+
+                String token = authHeader.substring(7);
 
                 String username = jwtUtil.extractUsername(token);
                 String role = jwtUtil.extractRole(token);
-                System.out.println("DEBUG -> username: [" + username + "] role: [" + role + "]");
 
-                if (username != null) {
+                UsernamePasswordAuthenticationToken authentication =
+                        new UsernamePasswordAuthenticationToken(
+                                username,
+                                null,
+                                List.of(new SimpleGrantedAuthority("ROLE_" + role))
+                        );
 
-                    UsernamePasswordAuthenticationToken authentication =
-                            new UsernamePasswordAuthenticationToken(
-                                    username,
-                                    null,
-                                    List.of(new SimpleGrantedAuthority("ROLE_" + role))
-                            );
+                SecurityContextHolder.getContext().setAuthentication(authentication);
 
-                    SecurityContextHolder.getContext().setAuthentication(authentication);
-                }
-
-            } catch (Exception e) {
-                // ignore invalid token
+            } catch (Exception ex) {
+                System.out.println("JWT ERROR: " + ex.getMessage());
             }
         }
 
