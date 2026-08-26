@@ -1,0 +1,15 @@
+package com.whylock.whylock.risk;
+
+public enum RiskFactor {
+
+    BRUTE_FORCE_DETECTED,
+    IP_REPUTATION_BAD,
+    GEO_ANOMALY,
+    NEW_DEVICE_LOGIN,
+    TOR_NODE,
+    MALICIOUS_USER_AGENT,
+    UNUSUAL_LOGIN_TIME,
+    CVE_CRITICAL_ACTIVE,
+    URL_MALWARE_DETECTED,
+    CLOUD_MISCONFIGURATION
+}

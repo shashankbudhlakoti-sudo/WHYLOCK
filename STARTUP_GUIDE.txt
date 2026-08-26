@@ -1,0 +1,180 @@
+================================================================================
+                    HOW TO START WHYLOCK APPLICATION
+================================================================================
+
+STEP 1: START POSTGRESQL
+────────────────────────────────────────────────────────────────────────────────
+Method A (Windows Services):
+  1. Press Windows Key + R
+  2. Type: services.msc
+  3. Find: "postgresql-x64-XX" (or similar)
+  4. If stopped, Right-click → Start
+  5. Wait for status to show "Running"
+
+Method B (PostgreSQL Application):
+  1. Open PgAdmin or PostgreSQL Shell
+  2. Verify it's running
+
+Method C (Command Prompt):
+  1. Open Command Prompt
+  2. Type: psql -U postgres
+  3. If connected, PostgreSQL is running
+
+
+STEP 2: START REDIS
+────────────────────────────────────────────────────────────────────────────────
+Method A (Windows Services):
+  1. Press Windows Key + R
+  2. Type: services.msc
+  3. Find: "Redis" service
+  4. If stopped, Right-click → Start
+  5. Wait for status to show "Running"
+
+Method B (Redis Command Prompt):
+  1. Look for Redis installation folder
+  2. Run: redis-server.exe
+  3. Keep the window open
+
+Method C (Windows Subsystem):
+  1. If using WSL, start Redis in WSL terminal
+  2. Keep terminal open
+
+
+STEP 3: CREATE WHYLOCK DATABASE (First Time Only)
+────────────────────────────────────────────────────────────────────────────────
+Database Details:
+  Name:     whylock
+  User:     postgres
+  Password: lightyagami12345@
+
+Option A - Using pgAdmin:
+  1. Open pgAdmin
+  2. Connect to local PostgreSQL
+  3. Create new Database: "whylock"
+  4. Owner: postgres
+  5. Save
+
+Option B - Using Command Line:
+  1. Open Command Prompt
+  2. Type: psql -U postgres
+  3. Type: CREATE DATABASE whylock;
+  4. Type: \q (to exit)
+
+Option C - Automatic Creation:
+  - Application will auto-create if configured (check DDL settings)
+
+
+STEP 4: START WHYLOCK APPLICATION
+────────────────────────────────────────────────────────────────────────────────
+Method A (Easy - Recommended):
+  1. Open Windows Explorer
+  2. Navigate to: C:\Users\shash\OneDrive\Desktop\whylock
+  3. Double-click: run.bat
+  4. Wait for message: "Started WhylockApplication..."
+
+Method B (Manual):
+  1. Open Command Prompt
+  2. Navigate to: C:\Users\shash\OneDrive\Desktop\whylock
+  3. Type: mvnw.cmd spring-boot:run
+  4. Wait for startup messages
+
+Method C (Using JAR):
+  1. Open Command Prompt
+  2. Navigate to: C:\Users\shash\OneDrive\Desktop\whylock
+  3. Type: java -jar target\whylock-0.0.1-SNAPSHOT.jar
+  4. Wait for startup messages
+
+
+STEP 5: VERIFY APPLICATION IS RUNNING
+────────────────────────────────────────────────────────────────────────────────
+Signs of Success:
+  ✓ Console shows: "Started WhylockApplication in X.XXX seconds"
+  ✓ Console shows: "Tomcat started on port(s): 8085"
+  ✓ No ERROR messages visible
+
+Access the Application:
+  Open Browser: http://localhost:8085
+  
+  Or for login: http://localhost:8085/auth/login
+
+
+STEP 6: VERIFY ALL SERVICES ARE RUNNING
+────────────────────────────────────────────────────────────────────────────────
+Quick Check:
+  1. Navigate to: C:\Users\shash\OneDrive\Desktop\whylock
+  2. Double-click: check-services.bat
+  3. This shows which services are running
+
+
+TROUBLESHOOTING
+────────────────────────────────────────────────────────────────────────────────
+
+Problem: "ERR_CONNECTION_REFUSED on port 8085"
+Solution:
+  1. Make sure run.bat completed successfully
+  2. Check console for error messages
+  3. Verify PostgreSQL is running
+  4. Verify Redis is running
+  5. Check firewall isn't blocking port 8085
+
+Problem: "database 'whylock' does not exist"
+Solution:
+  1. Create database: See STEP 3 above
+  2. Or let Spring Boot auto-create (if DDL enabled)
+  3. Restart the application
+
+Problem: "Connection refused for Redis"
+Solution:
+  1. Start Redis service
+  2. Check port 6379 is available
+  3. Restart WhyLock app
+
+Problem: "PostgreSQL connection refused"
+Solution:
+  1. Start PostgreSQL service
+  2. Check credentials in application.properties
+  3. Verify user 'postgres' exists with correct password
+  4. Restart WhyLock app
+
+
+QUICK CHECKLIST
+────────────────────────────────────────────────────────────────────────────────
+Before running run.bat:
+
+☐ PostgreSQL service is RUNNING
+☐ Redis service is RUNNING
+☐ Database 'whylock' exists
+☐ PostgreSQL username: postgres
+☐ PostgreSQL password: lightyagami12345@
+☐ Ports available: 5432, 6379, 8085
+
+If all checkboxes are YES, then:
+  Double-click run.bat and it should work!
+
+
+DEFAULT PORTS
+────────────────────────────────────────────────────────────────────────────────
+PostgreSQL:     5432
+Redis:          6379
+WhyLock App:    8085
+
+
+IMPORTANT CREDENTIALS
+────────────────────────────────────────────────────────────────────────────────
+PostgreSQL:
+  Username: postgres
+  Password: lightyagami12345@
+  Database: whylock
+  Server:   localhost
+  Port:     5432
+
+Redis:
+  Host: localhost
+  Port: 6379
+
+WhyLock App:
+  URL: http://localhost:8085
+
+================================================================================
+Need help? Run check-services.bat to verify your setup!
+================================================================================

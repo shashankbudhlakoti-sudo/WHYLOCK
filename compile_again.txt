@@ -1,0 +1,238 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.whylock:whylock >-------------------------
+[INFO] Building whylock 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ whylock ---
+[INFO] Deleting C:\Users\shash\OneDrive\Desktop\whylock\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ whylock ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ whylock ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 63 source files with javac [debug parameters release 21] to target\classes
+[INFO] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java: Some input files use or override a deprecated API.
+[INFO] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java: Recompile with -Xlint:deprecation for details.
+[INFO] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/threat/CveFeedService.java: C:\Users\shash\OneDrive\Desktop\whylock\src\main\java\com\whylock\whylock\threat\CveFeedService.java uses unchecked or unsafe operations.
+[INFO] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/threat/CveFeedService.java: Recompile with -Xlint:unchecked for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/AiFixAssistantService.java:[252,12] cannot find symbol
+  symbol:   method setTitle(java.lang.String)
+  location: variable fix of type com.whylock.whylock.dto.FixResponse
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/AiFixAssistantService.java:[282,16] cannot find symbol
+  symbol:   method setEstimatedFixTime(java.lang.String)
+  location: variable fix of type com.whylock.whylock.dto.FixResponse
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/AiFixAssistantService.java:[283,16] cannot find symbol
+  symbol:   method setRiskIfIgnored(java.lang.String)
+  location: variable fix of type com.whylock.whylock.dto.FixResponse
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/MonitoringService.java:[274,60] cannot find symbol
+  symbol:   method getSslGrade()
+  location: class com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/MonitoringService.java:[275,18] cannot find symbol
+  symbol:   method getScanDurationMs()
+  location: variable r of type com.whylock.whylock.model.AiScanResponse
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[45,15] cannot find symbol
+  symbol:   method setTargetUrl(java.lang.String)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[49,19] cannot find symbol
+  symbol:   method setHost(java.lang.String)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[61,19] cannot find symbol
+  symbol:   method setSslGrade(java.lang.String)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[62,19] cannot find symbol
+  symbol:   method setScanSuccess(boolean)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[66,19] cannot find symbol
+  symbol:   method setScanSuccess(boolean)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[67,19] cannot find symbol
+  symbol:   method setErrorMessage(java.lang.String)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[89,15] cannot find symbol
+  symbol:   method setFullIssuerDn(java.lang.String)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[90,15] cannot find symbol
+  symbol:   method setChainDepth(int)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[94,15] cannot find symbol
+  symbol:   method setCertSubject(java.lang.String)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[102,15] cannot find symbol
+  symbol:   method setCertExpired(boolean)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[103,15] cannot find symbol
+  symbol:   method setCertExpiringSoon(boolean)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[106,15] cannot find symbol
+  symbol:   method setCertSerialNumber(java.lang.String)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[107,15] cannot find symbol
+  symbol:   method setSignatureAlgorithm(java.lang.String)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[111,15] cannot find symbol
+  symbol:   method setSubjectAltNames(java.util.List<java.lang.String>)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[112,15] cannot find symbol
+  symbol:   method setWildcardCert(boolean)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[116,15] cannot find symbol
+  symbol:   method setSelfSigned(boolean)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[134,15] cannot find symbol
+  symbol:   method setTls10Supported(boolean)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[135,15] cannot find symbol
+  symbol:   method setTls11Supported(boolean)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[156,23] cannot find symbol
+  symbol:   method setHstsIncludesSubdomains(boolean)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[157,23] cannot find symbol
+  symbol:   method setHstsPreload(boolean)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[163,41] cannot find symbol
+  symbol:   method setHstsMaxAge(long)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[171,19] cannot find symbol
+  symbol:   method setCtCompliant(boolean)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[179,19] cannot find symbol
+  symbol:   method setContentSecurityPolicy(boolean)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[180,19] cannot find symbol
+  symbol:   method setXFrameOptions(boolean)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[181,19] cannot find symbol
+  symbol:   method setXContentTypeOptions(boolean)
+  location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[192,14] cannot find symbol
+  symbol:   method isCertExpired()
+  location: variable r of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[192,35] cannot find symbol
+  symbol:   method isSelfSigned()
+  location: variable r of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/TechnologyDetectionService.java:[150,25] cannot find symbol
+  symbol:   method setHasCveExposure(boolean)
+  location: variable item of type com.whylock.whylock.model.TechStackItem
+[INFO] 33 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.448 s
+[INFO] Finished at: 2026-06-28T22:34:17+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project whylock: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/AiFixAssistantService.java:[252,12] cannot find symbol
+[ERROR]   symbol:   method setTitle(java.lang.String)
+[ERROR]   location: variable fix of type com.whylock.whylock.dto.FixResponse
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/AiFixAssistantService.java:[282,16] cannot find symbol
+[ERROR]   symbol:   method setEstimatedFixTime(java.lang.String)
+[ERROR]   location: variable fix of type com.whylock.whylock.dto.FixResponse
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/AiFixAssistantService.java:[283,16] cannot find symbol
+[ERROR]   symbol:   method setRiskIfIgnored(java.lang.String)
+[ERROR]   location: variable fix of type com.whylock.whylock.dto.FixResponse
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/MonitoringService.java:[274,60] cannot find symbol
+[ERROR]   symbol:   method getSslGrade()
+[ERROR]   location: class com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/MonitoringService.java:[275,18] cannot find symbol
+[ERROR]   symbol:   method getScanDurationMs()
+[ERROR]   location: variable r of type com.whylock.whylock.model.AiScanResponse
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[45,15] cannot find symbol
+[ERROR]   symbol:   method setTargetUrl(java.lang.String)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[49,19] cannot find symbol
+[ERROR]   symbol:   method setHost(java.lang.String)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[61,19] cannot find symbol
+[ERROR]   symbol:   method setSslGrade(java.lang.String)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[62,19] cannot find symbol
+[ERROR]   symbol:   method setScanSuccess(boolean)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[66,19] cannot find symbol
+[ERROR]   symbol:   method setScanSuccess(boolean)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[67,19] cannot find symbol
+[ERROR]   symbol:   method setErrorMessage(java.lang.String)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[89,15] cannot find symbol
+[ERROR]   symbol:   method setFullIssuerDn(java.lang.String)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[90,15] cannot find symbol
+[ERROR]   symbol:   method setChainDepth(int)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[94,15] cannot find symbol
+[ERROR]   symbol:   method setCertSubject(java.lang.String)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[102,15] cannot find symbol
+[ERROR]   symbol:   method setCertExpired(boolean)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[103,15] cannot find symbol
+[ERROR]   symbol:   method setCertExpiringSoon(boolean)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[106,15] cannot find symbol
+[ERROR]   symbol:   method setCertSerialNumber(java.lang.String)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[107,15] cannot find symbol
+[ERROR]   symbol:   method setSignatureAlgorithm(java.lang.String)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[111,15] cannot find symbol
+[ERROR]   symbol:   method setSubjectAltNames(java.util.List<java.lang.String>)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[112,15] cannot find symbol
+[ERROR]   symbol:   method setWildcardCert(boolean)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[116,15] cannot find symbol
+[ERROR]   symbol:   method setSelfSigned(boolean)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[134,15] cannot find symbol
+[ERROR]   symbol:   method setTls10Supported(boolean)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[135,15] cannot find symbol
+[ERROR]   symbol:   method setTls11Supported(boolean)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[156,23] cannot find symbol
+[ERROR]   symbol:   method setHstsIncludesSubdomains(boolean)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[157,23] cannot find symbol
+[ERROR]   symbol:   method setHstsPreload(boolean)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[163,41] cannot find symbol
+[ERROR]   symbol:   method setHstsMaxAge(long)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[171,19] cannot find symbol
+[ERROR]   symbol:   method setCtCompliant(boolean)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[179,19] cannot find symbol
+[ERROR]   symbol:   method setContentSecurityPolicy(boolean)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[180,19] cannot find symbol
+[ERROR]   symbol:   method setXFrameOptions(boolean)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[181,19] cannot find symbol
+[ERROR]   symbol:   method setXContentTypeOptions(boolean)
+[ERROR]   location: variable report of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[192,14] cannot find symbol
+[ERROR]   symbol:   method isCertExpired()
+[ERROR]   location: variable r of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java:[192,35] cannot find symbol
+[ERROR]   symbol:   method isSelfSigned()
+[ERROR]   location: variable r of type com.whylock.whylock.model.SslReport
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/TechnologyDetectionService.java:[150,25] cannot find symbol
+[ERROR]   symbol:   method setHasCveExposure(boolean)
+[ERROR]   location: variable item of type com.whylock.whylock.model.TechStackItem
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

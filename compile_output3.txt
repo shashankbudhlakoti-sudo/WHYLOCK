@@ -1,0 +1,49 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.whylock:whylock >-------------------------
+[INFO] Building whylock 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ whylock ---
+[INFO] Deleting C:\Users\shash\OneDrive\Desktop\whylock\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ whylock ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ whylock ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 61 source files with javac [debug parameters release 21] to target\classes
+[INFO] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java: Some input files use or override a deprecated API.
+[INFO] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/SslAnalysisService.java: Recompile with -Xlint:deprecation for details.
+[INFO] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/threat/CveFeedService.java: C:\Users\shash\OneDrive\Desktop\whylock\src\main\java\com\whylock\whylock\threat\CveFeedService.java uses unchecked or unsafe operations.
+[INFO] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/threat/CveFeedService.java: Recompile with -Xlint:unchecked for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/AiFixAssistantService.java:[6,31] cannot find symbol
+  symbol:   class FixRequest
+  location: package com.whylock.whylock.dto
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/AiFixAssistantService.java:[7,31] cannot find symbol
+  symbol:   class FixResponse
+  location: package com.whylock.whylock.dto
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/AiFixAssistantService.java:[76,36] cannot find symbol
+  symbol:   class FixRequest
+  location: class com.whylock.whylock.service.AiFixAssistantService
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/AiFixAssistantService.java:[76,12] cannot find symbol
+  symbol:   class FixResponse
+  location: class com.whylock.whylock.service.AiFixAssistantService
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/AiFixAssistantService.java:[179,35] cannot find symbol
+  symbol:   class FixRequest
+  location: class com.whylock.whylock.service.AiFixAssistantService
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/AiFixAssistantService.java:[249,58] cannot find symbol
+  symbol:   class FixRequest
+  location: class com.whylock.whylock.service.AiFixAssistantService
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/AiFixAssistantService.java:[249,13] cannot find symbol
+  symbol:   class FixResponse
+  location: class com.whylock.whylock.service.AiFixAssistantService
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/PdfReportService.java:[116,50] cannot find symbol
+  symbol:   method getVulnerabilities()
+  location: variable response of type com.whylock.whylock.model.AiScanResponse
+[ERROR] /C:/Users/shash/OneDrive/Desktop/whylock/src/main/java/com/whylock/whylock/service/PdfReportService.java:[118,40] cannot find symbol
