@@ -111,7 +111,7 @@ public class AiService {
         int retries = 3;
         for (int attempt = 1; attempt <= retries; attempt++) {
             String requestBody = mapper.writeValueAsString(Map.of(
-                    "model", "llama-3.3-70b-versatile",
+                    "model", "openai/gpt-oss-120b",
                     "messages", List.of(
                             Map.of("role", "user", "content", prompt)
                     ),
