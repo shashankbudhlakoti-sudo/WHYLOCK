@@ -49,7 +49,7 @@ public class AiFixAssistantService {
 
     public AiFixAssistantService(
             @Value("${whylock.groq.api-key}") String groqApiKey,
-            @Value("${whylock.groq.model:llama-3.3-70b-versatile}") String model,
+            @Value("${whylock.groq.model:openai/gpt-oss-120b}") String model,
             @Value("${whylock.groq.base-url:https://api.groq.com/openai/v1}") String baseUrl,
             RestTemplate restTemplate,
             ObjectMapper objectMapper) {
